@@ -1,1 +1,15 @@
 /* CSS declarations go here */
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.new-btn {
+	padding: 2em 5em;
+	font-size: 22px;
+}
+.our-contents {
+	text-align: center;
+}
