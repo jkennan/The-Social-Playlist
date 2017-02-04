@@ -18,8 +18,9 @@ Template.body.events({
 		
 		const target = event.target;
 		const text = target.text.value;
+		const url = target.url.value;
 		
-		Meteor.call('tasks.insert', text);
+		Meteor.call('tasks.insert', text, url);
 		
 		target.text.value = '';
 	},
