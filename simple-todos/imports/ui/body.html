@@ -1,0 +1,25 @@
+<body>
+	<div class="container">
+		<header>
+			<h1>Todo List</h1>
+			
+			{{> loginButtons}}
+			
+			{{#if currentUser}}
+				<!--THIS IS WHERE THE PLAYER GOES
+				BECAUSE CURRENTuSER IS THE HOST -->
+			
+			<form class="new-task">
+				<input type="text" name="text" placeholder="Type to add new item" />
+			</form>
+			{{/if}}
+		</header>
+		
+		<ul>
+			{{#each tasks}}
+				{{> task}}
+			{{/each}}
+		</ul>
+	</div>
+</body>
+
