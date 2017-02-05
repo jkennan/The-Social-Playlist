@@ -30,3 +30,7 @@ table th, table td {
 input, select {
 	margin: 0.5em;
 }
+
+#guest_index_table .task_delete {
+	display: none;
+}

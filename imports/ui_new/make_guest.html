@@ -1,10 +1,10 @@
 <template name="make_guest">
 
 	<div class="container our-contents">
-		<div class="input-group input-group-lg">
+		<form class="enter-room">
 			<input type="text" name="partycode" placeholder="Party Code" class="form-control" id="partyname">
-		</div><br>
-		<a type="button" href="{{pathFor 'guest_index'}}" class="btn btn-success new-btn">Submit</a>
+			<input type="submit" align="center" class="btn btn-primary new-btn">
+		</form>
 		<!-- TODO: We need to work with history! -->
 		<a type="button" href="{{pathFor 'index'}}" class="btn btn-secondary new-btn">Go Back</a>
 		<br><br><br>

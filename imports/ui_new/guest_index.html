@@ -1,34 +1,37 @@
 <template name="guest_index">
 	<div class="container our-contents">
-<!--		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>-->
 			{{#if currentUser}}
+			<!-- This is here to make sure the context (the this) in host_index.js is the ROOM... see host_index.js events-->
 				<!--THIS IS WHERE THE PLAYER GOES
 				BECAUSE CURRENTuSER IS THE HOST -->
-			
+			<h2>You're in '{{curUserRoom}}'</h2>
+			{{#with curUserRoomContext }}
+			<br>
 			<form class="new-task">
-				<input type="text" name="text" placeholder="Type to add new item" class="input-group">
-				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group">
-				<input type="submit" align="center" class="btn btn-primary">
+				<input type="text" name="text" placeholder="Type to add new item" class="input-group form-control">
+				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group form-control">
+				<input type="submit" align="center" class="btn btn-primary new-btn">
 			</form>
-			<br><br>
-			<div style="text-align: center;">
-				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger">Clear All</button>
-			</div>
+			<!-- TODO: We need to work with history! -->
+			<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Leave Party</a>
+			<br>
+			{{/with}}
+			<h2>The Playlist</h2>
+			<br>
+			<table class="table" id="guest_index_table">
+				<thead>
+					<tr>
+					  <th>Name</th>
+					  <th>Song</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each tasks }}
+					{{> task }}
+				{{/each}}
+				</tbody>
+			</table>
 			{{/if}}
-		<br><br>
-		<button type="button" href="#" class="btn btn-secondary new-btn">Change modes</button>
-		<br><br>
-		<!-- TODO: We need to work with history! -->
-		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Leave Party</a>
-		<br>
-		<h2>The Playlist</h2>
-		<br>
-		<ul>
-			{{#each tasks}}
-				{{> task}}
-			{{/each}}
-
-		</ul>
 	</div>
 
 

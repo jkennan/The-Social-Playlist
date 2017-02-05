@@ -17,11 +17,11 @@
 			<form class="new-task">
 				<input type="text" name="text" placeholder="Type to add new item" class="input-group form-control">
 				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group form-control">
-				<input type="submit" align="center" class="btn btn-primary">
+				<input type="submit" align="center" class="btn btn-primary new-btn">
 			</form>
 			<br>
 			<div>
-				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger">Clear All</button>
+				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger new-btn">Clear All</button>
 			</div>
 			<br>
 			<a type="button" href="#" class="btn btn-secondary new-btn">Change modes</a>
@@ -34,7 +34,6 @@
 				<thead>
 					<tr>
 					  <th>Close</th>
-					  <th>Active</th>
 					  <th>Name</th>
 					  <th>Song</th>
 					</tr>

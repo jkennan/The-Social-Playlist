@@ -44,6 +44,7 @@ Template.host_index.events({
 	'click .deleteRoom'() {
 		// this is also the ROOM context
 		Meteor.call('rooms.remove', this._id);
+		Session.set("userHostedRoom", null)
 		Router.go('index');
 	},
 });

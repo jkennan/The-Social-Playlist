@@ -1,8 +1,6 @@
 <template name="task">
 	<tr class="{{#if checked}}checked{{/if}}">
-		<td><a class="delete close float-left">&times;</a></td>
-		
-		<td><input type="checkbox" checked="{{checked}}" class = "toggle-checked" /></td>
+		<td class="task_delete"><a class="delete close float-left">&times;</a></td>
 		
 		<td><strong>{{text}}</strong></td>
 

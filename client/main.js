@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { IronRouter } from 'meteor/iron:router';
+import { Rooms } from '../imports/api/rooms.js'
 
 import './bootstrap.css';
 import '../imports/startup/accounts-config.js';
@@ -41,8 +42,10 @@ Router.route('/add_song', function () {
   this.render('add_song');
 });
 
-Router.route('/guest_index', function () {
-  this.render('guest_index');
+Router.route('/guest_index/:_room', function () {
+  this.render('guest_index', { data : function () {
+	return Rooms.findOne({_text: this.params._text});
+  }});
 });
 
 Router.route('/host_index', function () {
