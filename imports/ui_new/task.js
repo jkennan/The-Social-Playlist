@@ -1,8 +1,13 @@
 import {Template} from 'meteor/templating';
-
 import {Tasks} from '../api/tasks.js';
 
 import './task.html';
+
+Template.task.helpers({
+	checkOwner(owner) {
+		return owner == this.userId || Session.get("userHostedRoom") !== null;
+	},
+});
 
 Template.task.events({
 	'click .toggle-checked'() {

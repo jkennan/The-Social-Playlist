@@ -1,14 +1,41 @@
 <template name="guest_index">
-	
 	<div class="container our-contents">
-		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>
-		<br><br>
-		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Leave</a>
-		<br>
-		<h2>The Playlist</h2>
-		<ul>
-			<li>Somehow we'll add the songs in the queue here</li>
-		</ul>
+			{{#if currentUser}}
+
+			<!-- This is here to make sure the context (the this) in host_index.js is the ROOM... see host_index.js events-->
+				<!--THIS IS WHERE THE PLAYER GOES
+				BECAUSE CURRENTuSER IS THE HOST -->
+			<h2>You're in '{{curUserRoom}}'</h2>
+			{{#with curUserRoomContext }}
+			<br>
+			<form class="new-task">
+				<input type="text" name="text" placeholder="Type to add new item" class="input-group form-control">
+				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group form-control">
+				<input type="submit" align="center" class="btn btn-primary new-btn">
+
+			</form>
+			<!-- TODO: We need to work with history! -->
+			<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Leave Party</a>
+			{{/with}}
+			<br>
+			<br>
+			<h2>The Playlist</h2>
+			<table class="table" id="guest_index_table">
+				<thead>
+					<tr>
+					  <th>Name</th>
+					  <th>Song</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each tasks }}
+					{{> task }}
+				{{/each}}
+				</tbody>
+			</table>
+			{{else}}
+				<h2>You need to <a href="{{pathFor 'make_guest'}}">join a party</a>!</h2>
+			{{/if}}
 	</div>
 
 
@@ -17,4 +44,5 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
 </template>
