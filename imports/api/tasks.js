@@ -26,8 +26,8 @@ Meteor.methods({
     Tasks.remove(taskId);
   },
 	
-	'tasks.removeAll': function() {
-		Tasks.remove({});
+	'tasks.removeAll': function(roomId) {
+		Tasks.remove({roomId: roomId});
 	},
   	
 	'tasks.setChecked'(taskId, setChecked) {

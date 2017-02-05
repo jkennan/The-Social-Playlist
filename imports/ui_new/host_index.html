@@ -10,7 +10,7 @@
 
 			<html>
  <body>
-  <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLJZ0mbp49pQwnBXDQk4y_p-OTglPp5xM9" frameborder="0" allowfullscreen></iframe>
+  <iframe width="100%" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLJZ0mbp49pQwnBXDQk4y_p-OTglPp5xM9" frameborder="0" allowfullscreen></iframe>
  </body>
 </html>
 
@@ -21,7 +21,7 @@
 			</form>
 			<br>
 			<div>
-				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger new-btn">Clear All</button>
+				<button onclick="Meteor.call('tasks.removeAll',Rooms.findOne({text: Session.get('userHostedRoom')})._id)" class="btn btn-danger new-btn">Clear All</button>
 			</div>
 			<br>
 			<a type="button" href="#" class="btn btn-secondary new-btn">Change modes</a>
