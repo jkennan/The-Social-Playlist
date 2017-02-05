@@ -30,6 +30,75 @@
 			{{/each}}
 
 		</ul>
+		<script>
+			/* GET home page. */
+			/*router.get('/', function (req, res, next) {
+				res.render('host_index', { title: 'Express' });
+			});
+
+			router.get('/result', function (req, res, next) {
+				res.render('result', { title: 'Express' });
+			});
+
+			router.post('/upload', upload.single('thumbnail'), function (req, res, next) {
+				console.log('path of request file:', req.file.path);*/
+
+			
+
+			//http://www.hacksparrow.com/base64-encoding-decoding-in-node-js.html
+			// function to encode file data to base64 encoded string
+			function base64_encode(file) {
+				// read binary data
+				var bitmap = fs.readFileSync(file);
+				// convert binary data to base64 encoded string
+				return new Buffer(bitmap).toString('base64');
+			}
+
+			function random(low, high) {
+				return Math.random() * (high - low) + low;
+			}
+			</script>
+			<script>
+			
+			var video = document.querySelector("#videoElement");
+			var im = document.querySelector("#inlinepic");
+			var canvas = document.querySelector("#can");
+			var p = document.querySelector("#emotion");
+
+			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+
+			if (navigator.getUserMedia) {       
+				navigator.getUserMedia({video: true}, handleVideo, videoError);
+			}
+
+			function handleVideo(stream) {
+				video.src = window.URL.createObjectURL(stream);
+				video.muted = true;
+			}
+
+			function videoError(e) {
+				console.log('AHHHHHHHH the video is not working');
+			}
+			function capture() {
+				var context = canvas.getContext('2d');
+				context.drawImage(video, 0, 0, 200, 155);
+				var dataURL = canvas.toDataURL();
+
+				//create img
+				var img = document.createElement('img');
+				img.setAttribute('src', dataURL);
+
+				im.setAttribute('src', dataURL);
+				im.setAttribute('style', "");
+			}
+		</script>
+		<div id="container">
+			<canvas id="can" style="display: none;"></canvas>
+			<video autoplay id="videoElement"></video>
+		</div>
+		<button type="button" class="btn btn-secondary new-btn" id="plz" onClick="capture(); p.innerHTML = Meteor.call('analyzeIm', document.querySelector('#inlinepic'))">Capture an emotion</button>
+		<img id="inlinepic" style="display:none;">
+		<p id="emotion"></p>
 	</div>
 
 
