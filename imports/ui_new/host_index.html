@@ -15,7 +15,7 @@
 </html>
 
 			<form class="new-task">
-				<input type="text" name="text" placeholder="Type to add new item" class="input-group form-control">
+				<input type="text" name="text" placeholder="Type to add new item. For greater accuracy include artist too." class="input-group form-control">
 				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group form-control">
 				<input type="submit" align="center" class="btn btn-primary">
 			</form>
@@ -30,6 +30,7 @@
 			{{/with}}
 
 			<h2>The Playlist</h2>
+			<button onclick="Meteor.call('getSongs', 'upbeat')">songs</button>
 			<table class="table">
 				<thead>
 					<tr>

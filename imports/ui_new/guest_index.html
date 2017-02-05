@@ -2,11 +2,9 @@
 	<div class="container our-contents">
 <!--		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>-->
 			{{#if currentUser}}
-				<!--THIS IS WHERE THE PLAYER GOES
-				BECAUSE CURRENTuSER IS THE HOST -->
 			
 			<form class="new-task">
-				<input type="text" name="text" placeholder="Type to add new item" class="input-group">
+				<input type="text" name="text" placeholder="Type to add new item. For greater accuracy include artist too." class="input-group">
 				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group">
 				<input type="submit" align="center" class="btn btn-primary">
 			</form>

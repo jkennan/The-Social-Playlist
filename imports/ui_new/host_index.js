@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 import { Rooms } from '../api/rooms.js';
 import { YouTubeAPI } from '../api/youtubeapi.js';
+import {LastAPI} from '../api/lastapi.js';
 import { Session } from 'meteor/session';
 
 import './task.js';
