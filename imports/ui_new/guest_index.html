@@ -1,13 +1,34 @@
 <template name="guest_index">
-	
 	<div class="container our-contents">
-		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>
+<!--		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>-->
+		{{> loginButtons}}
+			
+			{{#if currentUser}}
+				<!--THIS IS WHERE THE PLAYER GOES
+				BECAUSE CURRENTuSER IS THE HOST -->
+			
+			<form class="new-task">
+				<input type="text" name="text" placeholder="Type to add new item" class="input-group">
+				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group">
+				<input type="submit" align="center" class="btn btn-primary">
+			</form>
+			<br><br>
+			<div style="text-align: center;">
+				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger">Clear All</button>
+			</div>
+			{{/if}}
 		<br><br>
-		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Leave</a>
+		<button type="button" href="#" class="btn btn-secondary new-btn">Change modes</button>
+		<br><br>
+		<!-- TODO: We need to work with history! -->
+		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Leave Party</a>
 		<br>
 		<h2>The Playlist</h2>
 		<ul>
-			<li>Somehow we'll add the songs in the queue here</li>
+			{{#each tasks}}
+				{{> task}}
+			{{/each}}
+
 		</ul>
 	</div>
 
@@ -17,4 +38,5 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
 </template>
