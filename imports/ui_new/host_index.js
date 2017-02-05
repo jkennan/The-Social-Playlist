@@ -7,6 +7,7 @@ import {LastAPI} from '../api/lastapi.js';
 import { Session } from 'meteor/session';
 
 import './task.js';
+import './embed_player';
 
 import './host_index.html';
 
