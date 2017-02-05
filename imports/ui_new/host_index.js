@@ -1,7 +1,9 @@
 import {Meteor} from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
+import { Rooms } from '../api/rooms.js';
 import { YouTubeAPI } from '../api/youtubeapi.js';
+import { Session } from 'meteor/session';
 
 import './task.js';
 
@@ -9,8 +11,16 @@ import './host_index.html';
 
 Template.host_index.helpers({
 	tasks() {
-		return Tasks.find({});
+		// get tasks with the room id under the room context
+		return Tasks.find({roomId: Rooms.findOne({text: Session.get("userHostedRoom")})._id});
 	},
+	userHostedRoom() {
+		return Session.get("userHostedRoom");
+	},
+	
+	userHostedRoomContext() {
+		return Rooms.findOne({text: Session.get("userHostedRoom")});
+	}
 });
 
 Template.host_index.events({
@@ -24,10 +34,16 @@ Template.host_index.events({
 		if (url == '') {
 			Meteor.call('searchIt', text);
 		} else {
-			Meteor.call('tasks.insert', text, url);
+			// this is the ROOM context
+			Meteor.call('tasks.insert', text, url, this._id);
 		}
 
 		target.text.value = '';
 		target.url.value = '';
+	},
+	'click .deleteRoom'() {
+		// this is also the ROOM context
+		Meteor.call('rooms.remove', this._id);
+		Router.go('index');
 	},
 });

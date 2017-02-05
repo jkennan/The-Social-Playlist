@@ -1,11 +1,11 @@
 <template name="task">
-	<li class="{{#if checked}}checked{{/if}}">
-		<button class="delete">&times;</button>
+	<tr class="{{#if checked}}checked{{/if}}">
+		<td><a class="delete close float-left">&times;</a></td>
 		
-		<input type="checkbox" checked="{{checked}}" class = "toggle-checked" />
+		<td><input type="checkbox" checked="{{checked}}" class = "toggle-checked" /></td>
 		
-		<span class="text"><strong>{{text}}</strong></span>
+		<td><strong>{{text}}</strong></td>
 
-		<span class="text">{{url}}</span>
-	</li>
+		<td>{{url}}</td>
+	</tr>
 </template>

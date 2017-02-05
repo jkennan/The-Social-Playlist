@@ -1,33 +1,49 @@
 <template name="host_index">
 	<div class="container our-contents">
-			{{#if currentUser}}
+			{{#if userHostedRoom}}
+			<!-- This is here to make sure the context (the this) in host_index.js is the ROOM... see host_index.js events-->
+			{{#with userHostedRoomContext}} 
 				<!--THIS IS WHERE THE PLAYER GOES
 				BECAUSE CURRENTuSER IS THE HOST -->
-			
+			<h2>You're hosting '{{userHostedRoom}}'</h2>
+			<br>
 			<form class="new-task">
-				<input type="text" name="text" placeholder="Type to add new item" class="input-group">
-				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group">
+				<input type="text" name="text" placeholder="Type to add new item" class="input-group form-control">
+				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group form-control">
 				<input type="submit" align="center" class="btn btn-primary">
 			</form>
-			<br><br>
-			<div style="text-align: center;">
+			<br>
+			<div>
 				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger">Clear All</button>
 			</div>
+			<br>
+			<a type="button" href="#" class="btn btn-secondary new-btn">Change modes</a>
+			<!-- TODO: We need to work with history! -->
+			<a type="button" class="deleteRoom btn btn-danger new-btn">End the jams</a>
+			{{/with}}
+			
+			<h2>The Playlist</h2>
+			<table class="table">
+				<thead>
+					<tr>
+					  <th>Close</th>
+					  <th>Active</th>
+					  <th>Name</th>
+					  <th>Song</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each tasks}}
+					{{> task}}
+				{{/each}}
+				</tbody>
+			</table>
+			{{else}}
+				<h2>You haven't <a href="{{pathFor 'make_party'}}">created a party</a> yet!</h2>
 			{{/if}}
-		<br><br>
-		<button type="button" href="#" class="btn btn-secondary new-btn">Change modes</button>
-		<br><br>
-		<!-- TODO: We need to work with history! -->
-		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">End the jams</a>
+
 		<br>
-		<h2>The Playlist</h2>
-		<ul>
-
-			{{#each tasks}}
-				{{> task}}
-			{{/each}}
-
-		</ul>
+		<br>
 	</div>
 
 

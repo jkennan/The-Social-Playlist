@@ -4,7 +4,7 @@ import{check} from 'meteor/check';
 export const Tasks = new Mongo.Collection('tasks');
 
 Meteor.methods({
-	'tasks.insert' (text, url) {
+	'tasks.insert' (text, url, roomId) {
 		check(text, String);
 
 		if(! this.userId) {
@@ -13,7 +13,8 @@ Meteor.methods({
 
 		Tasks.insert({
 			text,
-			url, 
+			url,
+			roomId,
 			createdAt: new Date(),
 			owner: this.userId,
 			username: Meteor.users.findOne(this.userId).username,

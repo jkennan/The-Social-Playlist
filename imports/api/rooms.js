@@ -30,9 +30,19 @@ Meteor.methods({
 		console.log(Rooms.find({}));
 	},
 	'rooms.remove'(roomId) {
+		if(! this.userId) {
+			throw new Meteor.Error('not-authorized');
+		}
+		
 		check(roomId, String);
 
 		Rooms.remove(roomId);
+  },
+  'rooms.removeAll'() {
+		if(! this.userId) {
+			throw new Meteor.Error('not-authorized');
+		}
+		Rooms.remove({});
   },
   	
 	'rooms.setType'(roomId, roomType) {

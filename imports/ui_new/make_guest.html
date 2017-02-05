@@ -7,13 +7,22 @@
 		<a type="button" href="{{pathFor 'guest_index'}}" class="btn btn-success new-btn">Submit</a>
 		<!-- TODO: We need to work with history! -->
 		<a type="button" href="{{pathFor 'index'}}" class="btn btn-secondary new-btn">Go Back</a>
-		<br><br>
+		<br><br><br>
 		<h2>Parties happening now</h2>
-		<ul>
-			{{#each rooms}}
-				{{> room}}
-			{{/each}}
-		</ul>
+		<br>
+		<table class="table">
+			<thead>
+				<tr>
+				  <th>Name</th>
+				  <th>Type</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each rooms}}
+					{{> room}}
+				{{/each}}
+			</tbody>
+		</table>
 	</div>
 
 

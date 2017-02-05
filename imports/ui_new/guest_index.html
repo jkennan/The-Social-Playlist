@@ -1,8 +1,6 @@
 <template name="guest_index">
 	<div class="container our-contents">
 <!--		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>-->
-		{{> loginButtons}}
-			
 			{{#if currentUser}}
 				<!--THIS IS WHERE THE PLAYER GOES
 				BECAUSE CURRENTuSER IS THE HOST -->
@@ -24,6 +22,7 @@
 		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Leave Party</a>
 		<br>
 		<h2>The Playlist</h2>
+		<br>
 		<ul>
 			{{#each tasks}}
 				{{> task}}

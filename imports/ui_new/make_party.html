@@ -2,8 +2,11 @@
 	<div class="container our-contents">
 		<form class="new-room">
 					<!-- TODO: Disallow submit if user not logged in-->
-			<input type="text" name="text" placeholder="Party Name" class="input-group">
-			<input type="text" name="roomType" placeholder="Party Type" class="input-group">
+			<input type="text" name="text" placeholder="Party Name" class="input-group form-control">
+			<select name="roomType" class="input-group form-control">
+				<option value="Simple">Simple</option>
+				<option value="Mood-Based">Mood-Based</option>
+			</select>
 			<input type="submit" align="center" class="btn btn-success new-btn">
 		</form>
 		<!-- TODO: We need to work with history! -->

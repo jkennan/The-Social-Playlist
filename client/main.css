@@ -22,3 +22,11 @@ body {
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
+table th, table td {
+	text-align: left;
+}
+
+input, select {
+	margin: 0.5em;
+}
