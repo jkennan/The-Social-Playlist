@@ -1,17 +1,17 @@
-<template name="make-party">
+<template name="add-song">
+
 	<div class="container our-contents">
 		<div class="input-group input-group-lg">
-			<input type="text" name="username" placeholder="Username" class="form-control" id="username"><br>
+			<input type="text" name="song" placeholder="Type your song name here" class="form-control" id="song">
+			<span class="input-group-btn">
+       			<button class="btn btn-secondary" type="button">Go!</button>
+     		</span>
 		</div>
-		<div class="input-group input-group-lg">
-			<input type="password" name="password" placeholder="Password" class="form-control" id="password">
-		</div><br>
-		<div class="input-group input-group-lg">
-			<input type="text" name="partyname" placeholder="Party Name" class="form-control" id="partyname">
-		</div><br>
+		<br>
 		<button type="button" class="btn btn-success new-btn">Submit</button>
+		<br><br>
 		<!-- TODO: We need to work with history! -->
-		<a type="button" href="{{pathFor 'index'}}" class="btn btn-secondary new-btn">Go Back</a>
+		<button type="button" href="{{pathFor 'index'}}" class="btn btn-secondary new-btn">Go Back</button>
 	</div>
 
 
