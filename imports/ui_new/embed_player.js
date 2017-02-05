@@ -12,17 +12,20 @@ import './embed_player.html';
 //});
 
 function getNewUrl() {
-	newUrl = Tasks.findOne({roomId: Rooms.findOne({text: Session.get("userHostedRoom")})._id}, {sort: {createdAt: -1}}).url;
-	
-	if (newUrl === undefined) {alert("You don't have any songs!")};
+	newTask = Tasks.findOne({roomId: Rooms.findOne({text: Session.get("userHostedRoom")})._id}, {sort: {createdAt: -1}});
+	if (newTask.url === undefined) {
+		alert("You don't have any songs!");
+		} else {
+	newUrl = newTask.url;
 	console.log(newUrl);
 	window.open(newUrl);
-	//Meteor.call('tasks.remove', );
+	Meteor.call('tasks.remove', newTask._id);
+		}
 }
 
-Template.embed_player.onCreated(function () {
-		getNewUrl();
-});
+//Templat7e.embed_player.onCreated(function () {
+//		getNewUrl();
+//});
 
 Template.embed_player.events({
 	'click #next-song' (event) {
