@@ -15,6 +15,9 @@ Meteor.methods({
         var resultObjectID = result.data.items[0].id.videoId;
         console.log(resultObjectTitle);
         console.log(resultObjectID);
+		  
+		var url = "https://www.youtube.com/watch?v=" + resultObjectID;
+		Meteor.call('tasks.insert', text, url, this._id);
       });
 
 
