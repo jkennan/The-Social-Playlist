@@ -2,11 +2,18 @@
 	<div class="container our-contents">
 			{{#if userHostedRoom}}
 			<!-- This is here to make sure the context (the this) in host_index.js is the ROOM... see host_index.js events-->
-			{{#with userHostedRoomContext}} 
+			{{#with userHostedRoomContext}}
 				<!--THIS IS WHERE THE PLAYER GOES
 				BECAUSE CURRENTuSER IS THE HOST -->
 			<h2>You're hosting '{{userHostedRoom}}'</h2>
 			<br>
+
+			<html>
+ <body>
+  <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLJZ0mbp49pQwnBXDQk4y_p-OTglPp5xM9" frameborder="0" allowfullscreen></iframe>
+ </body>
+</html>
+
 			<form class="new-task">
 				<input type="text" name="text" placeholder="Type to add new item" class="input-group form-control">
 				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group form-control">
@@ -21,7 +28,7 @@
 			<!-- TODO: We need to work with history! -->
 			<a type="button" class="deleteRoom btn btn-danger new-btn">End the jams</a>
 			{{/with}}
-			
+
 			<h2>The Playlist</h2>
 			<table class="table">
 				<thead>
