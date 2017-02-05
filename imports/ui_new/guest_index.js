@@ -12,7 +12,7 @@ import './guest_index.html';
 Template.guest_index.helpers({
 	tasks() {
 		// get tasks with the room id under the room context
-		return Tasks.find({roomId: Rooms.findOne({text: Session.get("curUserRoom")})._id});
+		return Tasks.find({roomId: Rooms.findOne({text: Session.get("curUserRoom")})._id}, {sort: {createdAt: -1}});
 	},
 	
 	curUserRoom() {
@@ -26,7 +26,6 @@ Template.guest_index.helpers({
 
 Template.guest_index.events({
 	'submit .new-task' (event) {
-		alert("Cats")
 		event.preventDefault();
 
 		const target = event.target;

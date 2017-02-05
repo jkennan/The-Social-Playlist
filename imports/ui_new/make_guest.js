@@ -9,7 +9,7 @@ import './make_guest.html';
 
 Template.make_guest.helpers({
 	rooms() {
-		return Rooms.find({});
+		return Rooms.find({}, {sort: {createdAt: -1}});
 	},
 });
 

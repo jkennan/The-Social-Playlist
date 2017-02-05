@@ -10,6 +10,7 @@ body {
 	font-size: 22px;
 	margin: 0.3em;
 	margin-top: 0.5em;
+	-webkit-appearance: none !important;
 }
 .our-contents {
 	text-align: center;
@@ -34,3 +35,4 @@ input, select {
 #guest_index_table .task_delete {
 	display: none;
 }
+
