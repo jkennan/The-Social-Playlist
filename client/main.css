@@ -15,7 +15,17 @@ body {
 .our-contents {
 	text-align: center;
 }
-
+#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
 #login-dropdown-list {
   position: fixed;
   top: 50%;
@@ -35,4 +45,3 @@ input, select {
 #guest_index_table .task_delete {
 	display: none;
 }
-

@@ -4,7 +4,9 @@ import{check} from 'meteor/check';
 export const Tasks = new Mongo.Collection('tasks');
 
 Meteor.methods({
+	
 	'tasks.insert' (text, url, roomId) {
+		alert("ive been called");
 		check(text, String);
 
 		if(! this.userId) {
