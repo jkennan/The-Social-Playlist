@@ -1,21 +1,4 @@
-<body>
-	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-	 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-	 </button>
-		<a class="navbar-brand" href="home">The Social Playlist</a>
-
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">About Us</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Contact</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+<template name="add-song">
 
 	<div class="container our-contents">
 		<div class="input-group input-group-lg">
@@ -27,7 +10,8 @@
 		<br>
 		<button type="button" class="btn btn-success new-btn">Submit</button>
 		<br><br>
-		<button type="button" class="btn btn-danger new-btn">Go Back</button>
+		<!-- TODO: We need to work with history! -->
+		<button type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Go Back</button>
 	</div>
 
 
@@ -36,4 +20,4 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-</body>
+</template>
