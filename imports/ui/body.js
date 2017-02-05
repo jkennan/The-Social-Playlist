@@ -32,11 +32,4 @@ Template.body.events({
 		target.text.value = '';
 		target.url.value = '';
 	},
-	
-	'click button' (event) {
-	
-	event.preventDefault();
-		Meteor.call('tasks.removeAll');
-
-	},
 });

@@ -16,7 +16,7 @@
 			</form>
 			<p></p>
 			<div style="text-align: center;">
-				<button>Clear All</button>
+				<button onclick="Meteor.call('tasks.removeAll')">Clear All</button>
 			</div>
 			{{/if}}
 		</header>
