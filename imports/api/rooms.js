@@ -14,10 +14,10 @@ Meteor.methods({
 		// TODO:
 		var existingRoom = Rooms.findOne({text: text});
 		console.log(existingRoom);
-		//if(existingRoom !== undefined ||
-		//   (existingRoom !== undefined && existingRoom.found().owner === this.userId)) {
-		//	throw new Meteor.Error('room-unavailable');
-		//}
+		if(existingRoom !== undefined ||
+		   (existingRoom !== undefined && existingRoom.found().owner === this.userId)) {
+			throw new Meteor.Error('room-unavailable');
+		}
 
 		Rooms.insert({
 			text,
