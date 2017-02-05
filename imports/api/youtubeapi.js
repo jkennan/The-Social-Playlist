@@ -10,10 +10,11 @@ Meteor.methods({
   }*/
   searchIt: function(text) {
       this.unblock();
-      console.log("AaaaaaaAAAAAAAAA");
       HTTP.get("https://www.googleapis.com/youtube/v3/search", {params:{"part": "snippet", q: text, "key": "AIzaSyBTdJsfEeE2hyaeKU9sWILzktn9M7rDhdM"}}, function(error, result) {
-        var resultObject = result.data.items;
-        console.log(resultObject);
+        var resultObjectTitle = result.data.items[0].snippet.title;
+        var resultObjectID = result.data.items[0].id.videoId;
+        console.log(resultObjectTitle);
+        console.log(resultObjectID);
       });
 
 

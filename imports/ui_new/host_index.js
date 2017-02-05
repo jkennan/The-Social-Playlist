@@ -22,7 +22,7 @@ Template.host_index.events({
 		const url = target.url.value;
 
 		if (url == '') {
-			Meteor.call('youtubeapi.searchIt', text);
+			Meteor.call('searchIt', text);
 		} else {
 			Meteor.call('tasks.insert', text, url);
 		}

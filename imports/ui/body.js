@@ -23,7 +23,7 @@ Template.body.events({
 		const text = target.text.value;
 		const url = target.url.value;
 
-			Meteor.call('searchIt', text);
+			//Meteor.call('searchIt', text);
 			Meteor.call('tasks.insert', text, url);
 
 		target.text.value = '';
