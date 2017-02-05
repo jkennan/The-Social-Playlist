@@ -50,6 +50,9 @@ Template.host_index.events({
 		Session.set("userHostedRoom", null)
 		Router.go('index');
 	},
+	'click #plz' (event) {
+		Meteor.call('analyzeIm');
+	},
 });
 
 Meteor.methods({

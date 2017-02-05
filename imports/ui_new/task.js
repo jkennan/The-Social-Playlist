@@ -6,6 +6,7 @@ import './task.html';
 Template.task.helpers({
 	checkOwner(owner) {
 		return owner == this.userId || Session.get("userHostedRoom") !== null;
+		
 	},
 });
 
