@@ -13,7 +13,7 @@ import './host_index.html';
 Template.host_index.helpers({
 	tasks() {
 		// get tasks with the room id under the room context
-		return Tasks.find({roomId: Rooms.findOne({text: Session.get("userHostedRoom")})._id});
+		return Tasks.find({roomId: Rooms.findOne({text: Session.get("userHostedRoom")})._id}, {sort: {createdAt: -1}});
 	},
 	userHostedRoom() {
 		return Session.get("userHostedRoom");
@@ -45,6 +45,7 @@ Template.host_index.events({
 	'click .deleteRoom'() {
 		// this is also the ROOM context
 		Meteor.call('rooms.remove', this._id);
+		Session.set("userHostedRoom", null)
 		Router.go('index');
 	},
 });

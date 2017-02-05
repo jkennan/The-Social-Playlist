@@ -10,18 +10,18 @@
 
 			<html>
  <body>
-  <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLJZ0mbp49pQwnBXDQk4y_p-OTglPp5xM9" frameborder="0" allowfullscreen></iframe>
+  <iframe width="100%" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLJZ0mbp49pQwnBXDQk4y_p-OTglPp5xM9" frameborder="0" allowfullscreen></iframe>
  </body>
 </html>
 
 			<form class="new-task">
 				<input type="text" name="text" placeholder="Type to add new item. For greater accuracy include artist too." class="input-group form-control">
 				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group form-control">
-				<input type="submit" align="center" class="btn btn-primary">
+				<input type="submit" align="center" class="btn btn-primary new-btn">
 			</form>
 			<br>
 			<div>
-				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger">Clear All</button>
+				<button onclick="Meteor.call('tasks.removeAll',Rooms.findOne({text: Session.get('userHostedRoom')})._id)" class="btn btn-danger new-btn">Clear All</button>
 			</div>
 			<br>
 			<a type="button" href="#" class="btn btn-secondary new-btn">Change modes</a>
@@ -35,7 +35,6 @@
 				<thead>
 					<tr>
 					  <th>Close</th>
-					  <th>Active</th>
 					  <th>Name</th>
 					  <th>Song</th>
 					</tr>
