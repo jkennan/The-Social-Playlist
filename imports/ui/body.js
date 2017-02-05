@@ -15,15 +15,17 @@ Template.body.helpers({
 
 Template.body.events({
 	'submit .new-task' (event) {
-		event.preventDefault();
-
-		const target = event.target;
-		const text = target.text.value;
-		//const url = target.url.value;
-
-		Meteor.call('tasks.insert', text);
-		Meteor.call('youtubeapi.searchIt', text);
-
-		target.text.value = '';
+		alert("you fucking twat");
+		
+//		event.preventDefault();
+//
+//		const target = event.target;
+//		const text = target.text.value;
+//
+//
+//		Meteor.call('tasks.insert', text);
+//		Meteor.call('youtubeapi.searchIt', text);
+//
+//		target.text.value = '';
 	},
 });
