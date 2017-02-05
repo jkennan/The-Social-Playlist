@@ -12,6 +12,15 @@ import '../imports/ui_new/make-guest.html';
 import '../imports/ui_new/about-us.html';
 import '../imports/ui_new/contact.html';
 
+//Router.configure({
+//  layoutTemplate: 'ApplicationLayout',
+//
+//  template: 'DefaultTemplate'
+//
+//  // .
+//  // .
+//  // .
+//});
 
 Router.route('/', function () {
   this.render('index');
