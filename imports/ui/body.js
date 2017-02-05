@@ -16,20 +16,24 @@ Template.body.helpers({
 Template.body.events({
 	'submit .new-task' (event) {
 
-		
+
 		event.preventDefault();
 
 		const target = event.target;
 		const text = target.text.value;
 		const url = target.url.value;
 
-		if (url == '') {
-			Meteor.call('youtubeapi.searchIt', text);
-		} else {
+			Meteor.call('searchIt', text);
 			Meteor.call('tasks.insert', text, url);
-		}
 
 		target.text.value = '';
 		target.url.value = '';
+	},
+
+	'click button' (event) {
+
+	event.preventDefault();
+		Meteor.call('tasks.removeAll');
+
 	},
 });
