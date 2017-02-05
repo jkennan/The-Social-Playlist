@@ -4,12 +4,12 @@ import { IronRouter } from 'meteor/iron:router';
 import './bootstrap.css'
 import '../imports/startup/accounts-config.js';
 import '../imports/ui_new/index.html';
-import '../imports/ui_new/make-party.html';
-import '../imports/ui_new/add-song.html';
-import '../imports/ui_new/guest-index.html';
-import '../imports/ui_new/host-index.html';
-import '../imports/ui_new/make-guest.html';
-import '../imports/ui_new/about-us.html';
+import '../imports/ui_new/make_party.html';
+import '../imports/ui_new/add_song.html';
+import '../imports/ui_new/guest_index.html';
+import '../imports/ui_new/host_index.html';
+import '../imports/ui_new/make_guest.html';
+import '../imports/ui_new/about_us.html';
 import '../imports/ui_new/contact.html';
 
 //Router.configure({
@@ -30,28 +30,28 @@ Router.route('/index', function () {
   this.render('index');
 });
 
-Router.route('/make-party', function () {
-  this.render('make-party');
+Router.route('/make_party', function () {
+  this.render('make_party');
 });
 
-Router.route('/add-song', function () {
-  this.render('add-song');
+Router.route('/add_song', function () {
+  this.render('add_song');
 });
 
-Router.route('/guest-index', function () {
-  this.render('guest-index');
+Router.route('/guest_index', function () {
+  this.render('guest_index');
 });
 
-Router.route('/host-index', function () {
-  this.render('host-index');
+Router.route('/host_index', function () {
+  this.render('host_index');
 });
 
-Router.route('/make-guest', function () {
-  this.render('make-guest');
+Router.route('/make_guest', function () {
+  this.render('make_guest');
 });
 
-Router.route('/about-us', function () {
-  this.render('about-us');
+Router.route('/about_us', function () {
+  this.render('about_us');
 });
 
 Router.route('/contact', function () {

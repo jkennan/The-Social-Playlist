@@ -1,9 +1,16 @@
-<template name="about-us">
+<template name="guest_index">
+	
 	<div class="container our-contents">
-	<p>This (awesome) webapp was made at <a href="hackatbrown.org">Hack@Brown</a>, a hackathon at Brown University.</p>
-	<p>Made by Jacob Leiken, Jeffrey Kennan, Mckenna Cisler, and Warren Partridge</p>
-	<p>Check us out on <a href="https://github.com/jkennan/The-Social-Playlist">GitHub!</a></p>
+		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>
+		<br><br>
+		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">Leave</a>
+		<br>
+		<h2>The Playlist</h2>
+		<ul>
+			<li>Somehow we'll add the songs in the queue here</li>
+		</ul>
 	</div>
+
 
 	<!-- Bootstrap core JavaScript
 	================================================== -->

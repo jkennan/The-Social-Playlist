@@ -1,12 +1,29 @@
-<template name="add-song">
+<template name="add_song">
 
 	<div class="container our-contents">
+<!--
 		<div class="input-group input-group-lg">
 			<input type="text" name="song" placeholder="Type your song name here" class="form-control" id="song">
 			<span class="input-group-btn">
        			<button class="btn btn-secondary" type="button">Go!</button>
      		</span>
 		</div>
+-->
+	
+				
+			{{#if currentUser}}
+				<!--THIS IS WHERE THE PLAYER GOES
+				BECAUSE CURRENTuSER IS THE HOST -->
+			
+			<form class="new-task">
+				<input type="text" name="text" placeholder="Type to add new item" class="input-group">
+				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group">
+				<input type="submit" align="center" class="btn btn-primary">
+			</form>
+			<div style="text-align: center;">
+				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger">Clear All</button>
+			</div>
+			{{/if}}
 		<br>
 		<button type="button" class="btn btn-success new-btn">Submit</button>
 		<br><br>

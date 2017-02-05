@@ -1,0 +1,31 @@
+<body>
+	<div class="container">
+		<header>
+			<h1>Todo List</h1>
+			
+			{{> loginButtons}}
+			
+			{{#if currentUser}}
+				<!--THIS IS WHERE THE PLAYER GOES
+				BECAUSE CURRENTuSER IS THE HOST -->
+			
+			<form class="new-task">
+				<input type="text" name="text" placeholder="Type to add new item" />
+				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" />
+				<input type="submit" align="center"/>
+			</form>
+			<p></p>
+			<div style="text-align: center;">
+				<button onclick="Meteor.call('tasks.removeAll')">Clear All</button>
+			</div>
+			{{/if}}
+		</header>
+		
+		<ul>
+			{{#each tasks}}
+				{{> task}}
+			{{/each}}
+		</ul>
+	</div>
+</body>
+

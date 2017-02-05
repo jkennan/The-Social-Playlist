@@ -1,7 +1,20 @@
-<template name="host-index">
+<template name="host_index">
 
 	<div class="container our-contents">
-		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>
+<!--		<a type="button" href="{{pathFor 'add-song'}}" class="btn btn-primary new-btn">Add Song!</a>-->
+		{{#if currentUser}}
+				<!--THIS IS WHERE THE PLAYER GOES
+				BECAUSE CURRENTuSER IS THE HOST -->
+			
+			<form class="new-task">
+				<input type="text" name="text" placeholder="Type to add new item" class="input-group">
+				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group">
+				<input type="submit" align="center" class="btn btn-primary">
+			</form>
+			<div style="text-align: center;">
+				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger">Clear All</button>
+			</div>
+			{{/if}}
 		<br><br>
 		<div class="btn-group">
 			<button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -14,15 +27,15 @@
 			  ...
 			</div>
 		  </div>
-		
-		<a type="button" class="btn btn-secondary new-btn">Change Modes</a>
 		<br><br>
 		<!-- TODO: We need to work with history! -->
 		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">End the jams</a>
 		<br>
 		<h2>The Playlist</h2>
 		<ul>
-			<li>Somehow we'll add the songs in the queue here</li>
+			{{#each tasks}}
+				{{> task}}
+			{{/each}}
 		</ul>
 	</div>
 

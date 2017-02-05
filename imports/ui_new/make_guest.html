@@ -1,13 +1,17 @@
-<template name="make-party">
+<template name="make_guest">
+
 	<div class="container our-contents">
+<!--
 		<div class="input-group input-group-lg">
 			<input type="text" name="username" placeholder="Username" class="form-control" id="username"><br>
 		</div>
 		<div class="input-group input-group-lg">
 			<input type="password" name="password" placeholder="Password" class="form-control" id="password">
 		</div><br>
+-->
+		{{> loginButtons}}
 		<div class="input-group input-group-lg">
-			<input type="text" name="partyname" placeholder="Party Name" class="form-control" id="partyname">
+			<input type="text" name="partycode" placeholder="Party Code" class="form-control" id="partyname">
 		</div><br>
 		<button type="button" class="btn btn-success new-btn">Submit</button>
 		<!-- TODO: We need to work with history! -->
