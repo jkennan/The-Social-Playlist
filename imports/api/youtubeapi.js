@@ -8,7 +8,7 @@ Meteor.methods({
         console.log("Error: " + error + " Result: " + JSON.stringify(result));
       });
   }*/
-  searchIt: function(text) {
+  searchIt: function(text, boardId) {
       this.unblock();
       HTTP.get("https://www.googleapis.com/youtube/v3/search", {params:{"part": "snippet", q: text, "key": "AIzaSyBTdJsfEeE2hyaeKU9sWILzktn9M7rDhdM"}}, function(error, result) {
         var resultObjectTitle = result.data.items[0].snippet.title;
@@ -16,9 +16,9 @@ Meteor.methods({
         console.log(resultObjectTitle);
         console.log(resultObjectID);
 		  
-		var url = "https://www.youtube.com/watch?v=" + resultObjectID;
-		Meteor.call('tasks.insert', text, url, this._id);
-      });
+			var url = "https://www.youtube.com/watch?v=" + resultObjectID;
+			Meteor.call('tasks.insert', text, url, boardId);
+     });
 
 
   }
