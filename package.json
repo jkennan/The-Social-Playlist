@@ -1,5 +1,5 @@
 {
-  "name": "simple-todos",
+  "name": "sipmle-todos",
   "private": true,
   "scripts": {
     "start": "meteor run"

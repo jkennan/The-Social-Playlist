@@ -1,7 +1,4 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import { Meteor } from 'meteor/meteor';
+import '../imports/startup/accounts-config.js';
+import '../imports/ui/body.js';
 
-import './main.css';
-import './main.html';
-
-import '../imports/ui/home.js';
