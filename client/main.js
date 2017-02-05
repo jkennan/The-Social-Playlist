@@ -12,15 +12,9 @@ import '../imports/ui_new/make_guest.html';
 import '../imports/ui_new/about_us.html';
 import '../imports/ui_new/contact.html';
 
-//Router.configure({
-//  layoutTemplate: 'ApplicationLayout',
-//
-//  template: 'DefaultTemplate'
-//
-//  // .
-//  // .
-//  // .
-//});
+Router.configure({
+	noRoutesTemplate: "404page"
+});
 
 Router.route('/', function () {
   this.render('index');
