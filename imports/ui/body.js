@@ -15,17 +15,28 @@ Template.body.helpers({
 
 Template.body.events({
 	'submit .new-task' (event) {
-		alert("you fucking twat");
+
 		
-//		event.preventDefault();
-//
-//		const target = event.target;
-//		const text = target.text.value;
-//
-//
-//		Meteor.call('tasks.insert', text);
-//		Meteor.call('youtubeapi.searchIt', text);
-//
-//		target.text.value = '';
+		event.preventDefault();
+
+		const target = event.target;
+		const text = target.text.value;
+		const url = target.url.value;
+
+		if (url == '') {
+			Meteor.call('youtubeapi.searchIt', text);
+		} else {
+			Meteor.call('tasks.insert', text, url);
+		}
+
+		target.text.value = '';
+		target.url.value = '';
+	},
+	
+	'click button' (event) {
+	
+	event.preventDefault();
+		Meteor.call('tasks.removeAll');
+
 	},
 });
