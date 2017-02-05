@@ -6,6 +6,7 @@ import '../imports/startup/accounts-config.js';
 import '../imports/ui_new/host_index.js';
 import '../imports/ui_new/make_guest.js';
 import '../imports/ui_new/make_party.js';
+import '../imports/ui_new/guest_index.js';
 import '../imports/ui_new/index.html';
 import '../imports/ui_new/make_party.html';
 import '../imports/ui_new/add_song.html';

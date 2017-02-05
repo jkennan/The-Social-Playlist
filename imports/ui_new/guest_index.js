@@ -5,15 +5,15 @@ import { YouTubeAPI } from '../api/youtubeapi.js';
 
 import './task.js';
 
-import './host_index.html';
+import './guest_index.html';
 
-Template.host_index.helpers({
+Template.guest_index.helpers({
 	tasks() {
 		return Tasks.find({});
 	},
 });
 
-Template.host_index.events({
+Template.guest_index.events({
 	'submit .new-task' (event) {
 		event.preventDefault();
 
@@ -22,7 +22,7 @@ Template.host_index.events({
 		const url = target.url.value;
 
 		if (url == '') {
-			Meteor.call('searchIt', text);
+			Meteor.call('youtubeapi.searchIt', text);
 		} else {
 			Meteor.call('tasks.insert', text, url);
 		}

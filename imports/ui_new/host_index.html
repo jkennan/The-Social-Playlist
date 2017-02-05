@@ -9,22 +9,13 @@
 				<input type="url" name="url" placeholder="Type YouTube link in the form http:// [url] (or leave blank)" class="input-group">
 				<input type="submit" align="center" class="btn btn-primary">
 			</form>
+			<br><br>
 			<div style="text-align: center;">
 				<button onclick="Meteor.call('tasks.removeAll')" class="btn btn-danger">Clear All</button>
 			</div>
 			{{/if}}
 		<br><br>
-		<div class="btn-group">
-			<button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Large button
-			</button>
-			<button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  <span class="sr-only">Toggle Dropdown</span>
-			</button>
-			<div class="dropdown-menu">
-			  ...
-			</div>
-		  </div>
+		<button type="button" href="#" class="btn btn-secondary new-btn">Change modes</button>
 		<br><br>
 		<!-- TODO: We need to work with history! -->
 		<a type="button" href="{{pathFor 'index'}}" class="btn btn-danger new-btn">End the jams</a>
