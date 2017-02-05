@@ -12,6 +12,11 @@
 
 <body>
 	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+		<!--<div class="float-right">-->
+		<!--<span class="navbar-text float-right">-->
+		<!--	{{> loginButtons}}-->
+		<!--</span>-->
+		<!--<span>-->
 	 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 	 </button>
@@ -26,6 +31,9 @@
 					<a class="nav-link" href="{{pathFor 'contact'}}">Contact</a>
 				</li>
 			</ul>
+			<span class="navbar-text">
+				{{> loginButtons}}
+			</span>
 		</div>
 	</nav>
 </body>

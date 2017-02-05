@@ -9,7 +9,16 @@ body {
 	padding: 1em 5em;
 	font-size: 22px;
 	margin: 0.3em;
+	margin-top: 0.5em;
 }
 .our-contents {
 	text-align: center;
+}
+
+#login-dropdown-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }

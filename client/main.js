@@ -3,7 +3,9 @@ import { IronRouter } from 'meteor/iron:router';
 
 import './bootstrap.css';
 import '../imports/startup/accounts-config.js';
-import '../imports/ui_new/host_index.js'
+import '../imports/ui_new/host_index.js';
+import '../imports/ui_new/make_guest.js';
+import '../imports/ui_new/make_party.js';
 import '../imports/ui_new/index.html';
 import '../imports/ui_new/make_party.html';
 import '../imports/ui_new/add_song.html';
@@ -12,9 +14,10 @@ import '../imports/ui_new/host_index.html';
 import '../imports/ui_new/make_guest.html';
 import '../imports/ui_new/about_us.html';
 import '../imports/ui_new/contact.html';
+import '../imports/ui_new/404page.html';
 
 Router.configure({
-	noRoutesTemplate: "404page"
+	noRoutesTemplate: '404page',
 });
 
 Router.route('/', function () {
@@ -24,6 +27,10 @@ Router.route('/', function () {
 Router.route('/index', function () {
   this.render('index');
 });
+
+//Router.route('/404page', function () {
+//  this.render('404page');
+//});
 
 Router.route('/make_party', function () {
   this.render('make_party');
