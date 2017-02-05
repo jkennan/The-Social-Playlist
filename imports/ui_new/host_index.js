@@ -15,8 +15,6 @@ Template.host_index.helpers({
 
 Template.host_index.events({
 	'submit .new-task' (event) {
-
-		
 		event.preventDefault();
 
 		const target = event.target;
