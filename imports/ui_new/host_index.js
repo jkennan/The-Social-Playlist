@@ -8,7 +8,6 @@ import { Session } from 'meteor/session';
 import oxford from 'project-oxford';
 
 import './task.js';
-//import './mood_manager.js';
 import './host_index.html';
 
 
@@ -50,6 +49,10 @@ Template.host_index.events({
 		Session.set("userHostedRoom", null)
 		Router.go('index');
 	},
+	
+	'click #plz' (event) {
+		Meteor.call('analyzeIm' )
+	}
 });
 
 Meteor.methods({
