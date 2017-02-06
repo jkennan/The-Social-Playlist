@@ -33,7 +33,7 @@ Template.guest_index.events({
 		const url = target.url.value;
 
 		if (url == '') {
-			Meteor.call('searchIt', text);
+			Meteor.call('searchIt', text, this._id);
 		} else {
 			// this is the ROOM context
 			Meteor.call('tasks.insert', text, url, this._id);

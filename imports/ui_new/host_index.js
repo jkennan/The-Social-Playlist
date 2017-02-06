@@ -8,6 +8,9 @@ import { Session } from 'meteor/session';
 import oxford from 'project-oxford';
 
 import './task.js';
+
+import './embed_player';
+
 import './host_index.html';
 
 
@@ -34,7 +37,7 @@ Template.host_index.events({
 		const url = target.url.value;
 
 		if (url == '') {
-			Meteor.call('searchIt', text);
+			Meteor.call('searchIt', text, this._id);
 		} else {
 			// this is the ROOM context
 			Meteor.call('tasks.insert', text, url, this._id);
@@ -53,6 +56,10 @@ Template.host_index.events({
 	'click #plz' (event) {
 		Meteor.call('analyzeIm' )
 	}
+
+	'click #plz' (event) {
+		Meteor.call('analyzeIm');
+	},
 });
 
 Meteor.methods({
