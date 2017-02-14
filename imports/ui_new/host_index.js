@@ -3,7 +3,7 @@ import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 import { Rooms } from '../api/rooms.js';
 import { YouTubeAPI } from '../api/youtubeapi.js';
-import {LastAPI} from '../api/lastapi.js';
+import { LastAPI } from '../api/lastapi.js';
 import { Session } from 'meteor/session';
 import oxford from 'project-oxford';
 
@@ -55,10 +55,6 @@ Template.host_index.events({
 	
 	'click #plz' (event) {
 		Meteor.call('analyzeIm' )
-	}
-
-	'click #plz' (event) {
-		Meteor.call('analyzeIm');
 	},
 });
 
